@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>موقع الشات</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<h1>مرحبًا بك في موقع الشات</h1>
+<h3>اختر غرفة للدخول:</h3>
+
+<div class="rooms">
+<!-- 50 غرفة جاهزة -->
+<script>
+for(let i=1;i<=50;i++){
+    document.write( <button onclick="openChat( +i+ ,\ شات  +i+ \ )">شات  +i+ </button> );
+}
+</script>
+</div>
+
+<!-- نافذة الشات المنبثقة -->
+<div id="chat-popup">
+    <div id="chat-header">
+        <span id="chat-title"></span>
+        <button onclick="closeChat()">✖</button>
+    </div>
+    <iframe id="chat-iframe" src="" frameborder="0"></iframe>
+</div>
+
+<script>
+// فتح الشات المنبثق
+function openChat(id,name){
+    document.getElementById( chat-title ).innerText=name;
+    // هنا ضع رابط CBOX لكل غرفة
+    // مثال رابط واحد لجميع الغرف، يمكنك تغييره لكل غرفة لاحقًا
+    document.getElementById( chat-iframe ).src = "https://www4.cbox.ws/box/?boxid=4271419&boxtag=do3gdi&sec=main";
+    document.getElementById( chat-popup ).style.display= block ;
+}
+function closeChat(){
+    document.getElementById( chat-popup ).style.display= none ;
+}
+</script>
+</body>
+</html>
